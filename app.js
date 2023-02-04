@@ -21,6 +21,7 @@ const connectDB = require("./config/db");
 // const pups = require(__dirname + "/data.js");
 const { getMaxListeners } = require("process");
 const Pup = require("./models/pups");
+const Review = require("./models/review");
 const { ensureAuth, ensureGuest, ensureToken } = require("./middleware/auth");
 
 const userSchema = require("./models/userSchema");
@@ -53,7 +54,7 @@ const s3 = new S3Client({
 const upload = multer({
   storage: multerS3({
     s3,
-    bucket: "doberman-uploads",
+    bucket: "weimaraner-uploads",
     metadata: function(req, file, cb) {
       cb(null, { fieldName: file.fieldname });
     },
@@ -137,13 +138,18 @@ app.get("/available-puppies", async (req, res)=>{
 
 });
 
-app.post("/uploads", upload.single("photo"), ensureAuth, async (req, res) => {
+app.post("/uploads", upload.array("photo"), ensureAuth, async (req, res) => {
   let post;
   try {
     req.body.user = req.user.id;
     post = req.body;
-    if (req.file) {
-      post.photo = req.file.location;
+    let {files} = req;
+    let images = [];
+    files.map(file=>{
+      images.push(file.location)
+    })
+    if (req.files) {
+      post.photo = images;
     }
     await Pup.create(post);
     res.redirect("/");
@@ -151,6 +157,26 @@ app.post("/uploads", upload.single("photo"), ensureAuth, async (req, res) => {
     console.log(error);
   }
 });
+
+app.post("/all/testimonials", upload.single("photo"), async(req, res)=>{
+  let review;
+  try {
+    review = req.body;
+    if(req.file){
+      review.photo = req.file.location;
+    }
+    console.log(req.file)
+    await Review.create(review);
+    req.flash("success", "Your review was sent successfully!");
+    res.redirect("/testimonials");
+    
+  } catch (error) {
+    req.flash("error", "Oops! Your review could not be sent, please try again later.");
+    res.redirect("/testimonials");
+    console.log(error)
+  }
+
+})
 
 app.get("/puppies/:id", async (req, res) => {
   const requestedPuppy = req.params.id;
@@ -268,7 +294,7 @@ app.post("/email", async function(req, res, next) {
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 3000;
+  port = 5000;
 }
 app.listen(port, function() {
   console.log("Server has started sucessfully");

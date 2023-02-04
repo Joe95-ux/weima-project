@@ -1,126 +1,246 @@
 <%- include("partials/header") %>
-<section id="our-puppies" style="margin-top: 4rem;">
+<section id="our-puppies" style="margin-top: 4.2rem;">
     <div class="wrapper-enclosure">
-      <div class="section-title">
-        <div class="break-crum-wrapper">
-            <span><a href="/">Home</a></span>
-            <span>/</span>
-            <span class="current">Testimonials</span>
-        </div>
-        <h2 class="catalog-title">Trust Our Customers</h2>
+        <div class="section-title">
+            <div class="break-crum-wrapper">
+                <span><a href="/">Home</a></span>
+                <span>/</span>
+                <span class="current">Testimonials</span>
+            </div>
+
+            <% if(messages){%>
+                <% if(messages.error){%>
+                <div class="flash-wrapper home-flash">
+                    <div class="flash-message warning">
+                        <h5 class="flash-error"><%=messages.error[0]%> </h5>
+                    </div>
+                </div>
         
-      </div>
-      <div class="testimonials-center">
-        <div class="testi-wrapper">
-            <div class="testi-avatar">
-                <img src="/images/client2.jpg" alt="client-testimonial">
-                <div class="testi-name">
-                    <h3>Mark Ross</h3>
-                    <h4>20-12-2022</h4>
+                <%}%>
+                        <%if(messages.success){ %>
+                <div class="flash-wrapper home-flash">
+                    <div class="flash-message success-info">
+                        <h5 class="flash-success"><%=messages.success[0]%></h5>
+                    </div>
                 </div>
-
-            </div>
-            <div class="testi-main">
-                <p>Everything went as planned! Layla is a wonderful member of our family. She came home within a month
-                    of selecting and paying for her. The cost was a bit pricey, but she is worth the money. Everland Puppies followed
-                    through with all that they promised us. We might come back in the future for a second doggie.</p>
-            </div>
-
-        </div>
-        <div class="testi-wrapper">
-            <div class="testi-avatar">
-                <img src="/images/client2.jpg" alt="client-testimonial">
-                <div class="testi-name">
-                    <h3>Rachel A.</h3>
-                    <h4>10-6-2022</h4>
-                </div>
-
-            </div>
-            <div class="testi-main">
-                <p>I had a wonderful experience with Everland Puppies. We love our little Dorie! She is wonderful.
-                    Thanks for
-                    the easy experience, with puppy updates and calls to keep me informed..</p>
-            </div>
-
-        </div>
-        <div class="testi-wrapper">
-            <div class="testi-avatar">
-                <img src="/images/client3.jpg" alt="client-testimonial">
-                <div class="testi-name">
-                    <h3>Fabian C.</h3>
-                    <h4>02-6-2022</h4>
-                </div>
-
-            </div>
-            <div class="testi-main">
-                <p>What an amazing puppy we now have as part of our family. I just want everyone that may feel nervous
-                    about getting a puppy here to know that like anywhere, there are imperfections, but the thing that
-                    matters is the wonderful care and service and puppies that get to be a part of your family!</p>
-            </div>
-
-        </div>
-        <div class="testi-wrapper">
-            <div class="testi-avatar">
-                <img src="/images/client4.jpg" alt="client-testimonial">
-                <div class="testi-name">
-                    <h3>Sven S.</h3>
-                    <h4>13-3-2022</h4>
-                </div>
-
-            </div>
-            <div class="testi-main">
-                <p>Filli is an absolute love. He has a great disposition and appears to be
-                    perfectly healthy! The process with Everland Puppies was straight forward and they
-                    were always
-                    responsive and helpful when we had questions.</p>
-            </div>
-
-        </div>
-        <div class="testi-wrapper">
-            <div class="testi-avatar">
-                <img src="/images/review-pic.jpg" alt="client-testimonial">
-                <div class="testi-name">
-                    <h3>Becky A.</h3>
-                    <h4>15-06-2021</h4>
-                </div>
-
-            </div>
-            <div class="testi-main">
-                <p>All went very good from start to pick up and bringing Lion home!! Everland Puppies was
-                    very communicative, always available and very helpful throughout process. Puppy was
-                    everything we had hoped and wished for!</p>
-            </div>
-
-        </div>
-        <div class="testi-wrapper">
-            <div class="testi-avatar">
-                <img src="/images/client1.jpg" alt="client-testimonial">
-                <div class="testi-name">
-                    <h3>Martha R.</h3>
-                    <h4>10-03-2022</h4>
-                </div>
-
-            </div>
-            <div class="testi-main">
-                <p>This is the second puppy we have gotten from Everland Puppies and we'll use them again
-                    if we decide to get another pup. It's just too easy and the communication through out
-                    the process is excellent not to mention the quality of the dogs we have received.</p>
-            </div>
-
-        </div>
         
-        
-      </div>
+                <% } %>
+                <% } %>
+            <h2 class="catalog-title">Trust Our Customers</h2>
+
+        </div>
+        <div class="testimonials-center">
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review1.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Erica M</h3>
+                        <h4>20-12-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>Everything went as planned! Layla is a wonderful member of our family. She came home within a
+                        month
+                        of selecting and paying for her. The cost was a bit pricey, but she is worth the money.
+                        Weimaraner Home followed
+                        through with all that they promised us. We might come back in the future for a second doggie.
+                    </p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review2.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Julie P.</h3>
+                        <h4>10-6-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>I had a wonderful experience with Weimaraner Home. We love our little Dorie! She is wonderful.
+                        Thanks for
+                        the easy experience, with puppy updates and calls to keep me informed..</p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review3.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Doris L.</h3>
+                        <h4>02-6-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>What an amazing puppy we now have as part of our family. I just want everyone that may feel
+                        nervous
+                        about getting a puppy here to know that like anywhere, there are imperfections, but the thing
+                        that
+                        matters is the wonderful care and service and puppies that get to be a part of your family!</p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review4.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Rachel K.</h3>
+                        <h4>13-3-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>Filli is an absolute love. He has a great disposition and appears to be
+                        perfectly healthy! The process with Weimaraner Home was straight forward and they
+                        were always
+                        responsive and helpful when we had questions.</p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review7.webp" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Shannon C.</h3>
+                        <h4>05-07-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>The entire experience was great! This is our 1st time going through a service like this and I was
+                        skeptical, but the entire process was so smooth. I loved the customer service, the continual
+                        updates via email and most important finding our new family member that we are already so in
+                        love with! </p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review5.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Becky A.</h3>
+                        <h4>15-06-2021</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>All went very good from start to pick up and bringing Lion home!! Weimaraner Home was
+                        very communicative, always available and very helpful throughout process. Puppy was
+                        everything we had hoped and wished for!</p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review6.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Chris M.</h3>
+                        <h4>10-03-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>This is the second puppy we have gotten from Weimaraner Home and we'll use them again
+                        if we decide to get another pup. It's just too easy and the communication through out
+                        the process is excellent not to mention the quality of the dogs we have received.</p>
+                </div>
+
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review10.avif" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Clarise B.</h3>
+                        <h4>02-01-2023</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>I am extremely excited and surprised how smooth and accurate getting my puppy was. I not only
+                        received exactly what I paid for, but much more. My new “Winnie” was in a home where she was
+                        loved and cared for as much as I do at my home. I was grateful that she was mostly potty trained
+                        and already new how to sit when we got home. I have had at least 5 people want the info on where
+                        I got Winnie and most of my friends want to steal her from me. I am gratful for Weimaraner Home
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review9.jpeg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Vince Colton.</h3>
+                        <h4>08-05-2022</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>The whole experience was great! Any time we called with a question, we got someone friendly on
+                        the phone with all the answers! We love our little Belle! </p>
+                </div>
+
+            </div>
+
+
+            <div class="testi-wrapper">
+                <div class="testi-avatar">
+                    <img src="/images/review11.jpg" alt="client-testimonial">
+                    <div class="testi-name">
+                        <h3>Gale M.</h3>
+                        <h4>04-06-2021</h4>
+                    </div>
+
+                </div>
+                <div class="testi-main">
+                    <p>We were so thrilled to finally get our Westie. The process was fairly easy and seamless! Cost was
+                        what I expected for this type of service of having to transport your pup via air transport.
+                        Would use Weimaraner Home again ! </p>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="contact-inquiry-form testimonial-form" style="margin-top: 2rem;">
+            <h2 class="catalog-title" style="font-size: 1.5rem;">Leave Us a Review </h2>
+            <form class="footer-form" action="/all/testimonials" method="post">
+                <div class="names">
+                    <div class="firstname">
+                        <label for="fist-name">Your name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="lastname">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="optional" >
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="email">Photo</label>
+                    <input type="file" id="avatar" name="photo">
+                </div>
+                
+                <div class="input-field" style="margin-top: 1rem;">
+                    <textarea name="message" id="message" cols="5" rows="4"
+                        placeholder="write a review"
+                        required></textarea>
+                </div>
+                <button type="submit" class="find-btn finish">Submit</button>
+            </form>
+
+
+        </div>
+
     </div>
-  
-  
-  </section>
+
+
+</section>
 
 
 
 
 
 <%- include("partials/footer") %>
-
-
-

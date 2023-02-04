@@ -3,7 +3,7 @@
 
 
 
-<section id="our-puppies" style="margin-top: 4rem;">
+<section id="our-puppies" style="margin-top: 4.2rem;">
     <div class="wrapper-enclosure">
       <div class="section-title">
         <div class="break-crum-wrapper">
@@ -19,7 +19,7 @@
   
         <article class="single-puppy">
           <div class="img-container">
-            <img src="<%= allPuppies[i].photo%>"alt="<%= allPuppies[i].name %>" class="puppy-img">
+            <img src="<%= allPuppies[i].photo[0]%>"alt="<%= allPuppies[i].name %>" class="puppy-img">
             <a class="buy-me" type="button" href="/puppies/<%=allPuppies[i]._id%>"><i class="fas fa-paw"></i>Buy me</a>
           </div>
           <div class="about-puppy">

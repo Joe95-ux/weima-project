@@ -4,25 +4,33 @@
         <h1><%= puppy.name %> </h1>
         <hr>
         <div class="checkout">
-            <%if (puppy.photo){%>
+            <%if (puppy.photo.length){%>
             <div class="display-image">
-
-                <img src="<%= puppy.photo%>" alt=<%= puppy.name %> class="puppy-img">
+                <div class="left-wrapper">
+                    <div class="other-images">
+                        <% puppy.photo.slice(1).forEach(image=>{%>
+                        <img src="<%= image%>" alt="Weimaraner puppy" class="other-image">
+                        <%}) %>
+                    </div>
+                    <img src="<%= puppy.photo[0]%>" alt=<%= puppy.name %> class="puppy-img">
+                </div>
             </div>
             <% } %>
             <div class="pup-details">
                 <h2 class="section-title">Description</h2>
                 <hr class="description-rule">
+                <p><span class="property">Price</span> $<%= puppy.price %> </p>
                 <p><span class="property">Name</span> <%= puppy.name %> </p>
-                <p><span class="property">Sex</span> <%= puppy.sex %> </p>
+                <p><span class="property">Gender</span> <%= puppy.sex %> </p>
                 <p><span class="property">Age</span> <%= puppy.age %> old</p>
-                <p><span class="property">Vaccination</span> <%= puppy.vaccination %> </li>
-                    <p class="last-property"><span class="property">Price</span> $<%= puppy.price %> </p>
-                    <div class="purchase-btns">
-                        <button class="purchase-btn open">Ask About Me</button>
-                        <a href="#about-doberman" class="purchase-btn"
-                            role="button">About Breed</a>
-                    </div>
+                <p><span class="property">Vaccination</span> <%= puppy.vaccination %> </p>
+                <p><span class="property">Vet Checked</span> <%= puppy.vetchecked %> </p>
+                <p class="last-property"><span class="property">Available</span> <%= puppy.available%> </p>
+                <div class="purchase-btns">
+                    <button class="purchase-btn open">Ask About Me</button>
+                    <a href="#about-doberman" class="purchase-btn" role="button">About Breed</a>
+                </div>
+                    
 
             </div>
         </div>
@@ -36,59 +44,49 @@
                 <div class="clients-review-wrapper">
                     <div class="client-card">
                         <div class="card-content-wrapper">
-                            <img src="/images/client1.jpg" alt="golden retriever review">
+                            <img src="/images/review1.jpg" alt="golden retriever review">
                             <div class="client-card-content">
-                                <h4><i class="fas fa-heart"></i>by Sven S.</h4>
-                                <p>Filli is an absolute love. He has a great disposition and appears to be
-                                    perfectly healthy! The process with Everland puppies was straight forward and
-                                    they
-                                    were always
-                                    responsive and helpful when we had questions.</p>
+                                <h4><i class="fas fa-heart"></i>by Erika M.</h4>
+                                <p>Everything went as planned! Layla is a wonderful member of our family. She came home within a month
+                                    of selecting and paying for her. The cost was a bit pricey, but she is worth the money. Weimaraner Home followed
+                                    through with all that they promised us. We might come back in the future for a second doggie.</p>
                             </div>
                         </div>
-                        <p class="hidden-paragraph">Filli is an absolute love. He has a great disposition and appears to
-                            be
-                            perfectly healthy! The process with Everland puppies was straight forward and
-                            they
-                            were always
-                            responsive and helpful when we had questions.</p>
+                        <p class="hidden-paragraph">Everything went as planned! Layla is a wonderful member of our family. She came home within a month
+                            of selecting and paying for her. The cost was a bit pricey, but she is worth the money. Weimaraner Home followed
+                            through with all that they promised us. We might come back in the future for a second doggie.</p>
 
                     </div>
                     <div class="client-card">
                         <div class="card-content-wrapper">
-                            <img src="/images/client2.jpg" alt="golden retriever review">
+                            <img src="/images/review2.jpg" alt="golden retriever review">
                             <div class="client-card-content">
-                                <h4><i class="fas fa-heart"></i>by Becky A.</h4>
-                                <p>All went very good from start to pick up and bringing Lion home!! Everland Puppies
-                                    was
-                                    very communicative, always available and very helpful throughout process. Puppy was
-                                    everything we had hoped and wished for!!</p>
+                                <h4><i class="fas fa-heart"></i>by Julie P.</h4>
+                                <p>I had a wonderful experience with Weimaraner Home. We love our little Dorie! She is wonderful.
+                                    Thanks for
+                                    the easy experience, with puppy updates and calls to keep me informed..</p>
                             </div>
 
                         </div>
-                        <p class="hidden-paragraph">All went very good from start to pick up and bringing Lion home!!
-                            Everland Puppies was
-                            very communicative, always available and very helpful throughout process. Puppy was
-                            everything we had hoped and wished for!!</p>
+                        <p class="hidden-paragraph">I had a wonderful experience with Weimaraner Home. We love our little Dorie! She is wonderful.
+                            Thanks for
+                            the easy experience, with puppy updates and calls to keep me informed..</p>
                     </div>
                     <div class="client-card">
                         <div class="card-content-wrapper">
-                            <img src="/images/review-pic.jpg" alt="golden retriever review">
+                            <img src="/images/review3.jpg" alt="golden retriever review">
                             <div class="client-card-content">
-                                <h4><i class="fas fa-heart"></i>by Martha R.</h4>
-                                <p>This is the second puppy we have gotten from Everland puppies and we'll use them
-                                    again
-                                    if we decide to get another pup. It's just too easy and the communication through
-                                    out
-                                    the process is excellent not to mention the quality of the dogs we have received.
+                                <h4><i class="fas fa-heart"></i>by Doris L.</h4>
+                                <p>What an amazing puppy we now have as part of our family. I just want everyone that may feel nervous
+                                    about getting a puppy here to know that like anywhere, there are imperfections, but the thing that
+                                    matters is the wonderful care and service and puppies that get to be a part of your family!
                                 </p>
                             </div>
                         </div>
 
-                        <p class="hidden-paragraph">This is the second puppy we have gotten from Everland puppies and
-                            we'll use them again
-                            if we decide to get another pup. It's just too easy and the communication through out
-                            the process is excellent not to mention the quality of the dogs we have received.</p>
+                        <p class="hidden-paragraph">What an amazing puppy we now have as part of our family. I just want everyone that may feel nervous
+                            about getting a puppy here to know that like anywhere, there are imperfections, but the thing that
+                            matters is the wonderful care and service and puppies that get to be a part of your family!</p>
                     </div>
                 </div>
 
@@ -99,7 +97,7 @@
                     <p><%= puppy.description  %> </p>
                 </div>
                 <div class="puppy-facts" id="about-doberman">
-                    <h3>Facts About  Doberman Pinscher Puppies</h3>
+                    <h3>Facts About Weimaraner Puppies</h3>
                     <div class="qualities-wrapper">
                         <div class="range-container">
                             <span class="fa-stack fa-lg">
@@ -124,10 +122,10 @@
                             <div class="range-wrapper">
                                 <div class="quality">
                                     <p>Size</p>
-                                    <p><strong>Large</strong></p>
+                                    <p><strong>Medium</strong></p>
                                 </div>
                                 <div class="range-outer">
-                                    <div class="range-inner" style="width: 75%;"></div>
+                                    <div class="range-inner" style="width: 65%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -169,19 +167,21 @@
                             <div class="range-wrapper">
                                 <div class="quality">
                                     <p>Shedding Level</p>
-                                    <p><strong>Low</strong></p>
+                                    <p><strong>Moderate</strong></p>
                                 </div>
                                 <div class="range-outer">
-                                    <div class="range-inner" style="width: 10%;"></div>
+                                    <div class="range-inner" style="width: 30%;"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="bio-about" id="breed-info" style="margin-top: 1rem;">
-                        <h3>Living with</h3>
-                        <p>Doberman pinschers are powerful, energetic dogs that need lots of exercise. If they are not exercised, they are more likely to become irritable or even aggressive. They can adjust well to apartment living if exercised daily.
-                            Careful socialization and obedience training from a young age are essential for this breed. Doberman pinschers respond very well to positive reinforcement.
-                            No special guard training is needed for anyone who wants a good family protector. </p>
+                        <h3>Overview</h3>
+                        <p>Originally from Germany in the 19th Century, the Weimaraner is a breed recognized by 
+                            the American Kennel Club (AKC). This silver-gray coated pup is a loyal and loving dog. 
+                            They have been bred for hunting large game and can be fierce guard dogs. Weimaraners originally 
+                            hunted boars, bears, and deer with royalty until hunting trends shifted. Then, they were used to hunt fowl, 
+                            rabbits, and foxes. This dog breed is also a fantastic water dog because of their webbed paws and slick fur. </p>
                     </div>
                 </div>
 
@@ -195,7 +195,7 @@
                 <% puppies.forEach(pup=>{%>
                 <a href="/puppies/<%=pup._id%>">
                     <div class="puppy-card">
-                        <img src="<%= pup.photo%>" alt="puppy image">
+                        <img src="<%= pup.photo[0]%>" alt="puppy image">
                         <h3><%= pup.name %></h3>
                         <h4>
                             <span><%= pup.sex %>, </span><%= pup.age %> old
@@ -218,11 +218,11 @@
         <div class="fixer">
             <div class="overlay-inner">
                 <div class="puppy">
-                    <img src="<%= puppy.photo %>" alt=<%= puppy.name %>>
+                    <img src="<%= puppy.photo[0] %>" alt=<%= puppy.name %>>
                     <div class="pup-info">
                         <h4><span><%= puppy.name %></span> is waiting for you!</h4>
                         <p><%= puppy.sex %> | <%= puppy.age %></p>
-                        <h6>Doberman Pinscher Puppy</h6>
+                        <h6>Weimaraner Puppy</h6>
                     </div>
 
                 </div>
@@ -231,12 +231,12 @@
                     <form class="footer-form" action="/email" method="post">
                         <div class="names">
                             <div class="firstname">
-                                <label for="fist-name">First Name</label>
+                                <label for="fist-name">Your name</label>
                                 <input type="text" id="fName" name="firstname" required>
                             </div>
                             <div class="lastname">
-                                <label for="last-name">Last Name</label>
-                                <input type="text" id="lName" name="lastname" required>
+                                <label for="last-name">Puppie's name</label>
+                                <input type="text" id="lName" name="lastname" value="<%= puppy.name %>" required>
                             </div>
                         </div>
                         <div class="input-field">

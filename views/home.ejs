@@ -8,11 +8,11 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../images/use3.jpeg" class="header-image" alt="..." />
+        <img src="../images/use3.jpg" class="header-image" alt="..." />
         <div class="carousel-caption d-md-block">
           <div class="header-note-wrapper">
             <h1 class="heading stort-head">beautiful puppies</h1>
-            <p class="para-note">At Everland Puppies, we have been breeding dogs for over a decade now. we take our
+            <p class="para-note">At Weimaraner Home, we have been breeding dogs for over a decade now. we take our
               responsibilities very seriously and strive to ensure the health and well-being of our pets.</p>
             <a href="#our-puppies" class="find-btn" role="button"><i class="paw fas fa-paw"></i>find a puppy<i
                 class="paw fas fa-paw"></i></a>
@@ -84,9 +84,7 @@
         <% } %>
       <h2 class="product-title">our beautiful puppies</h2>
       <p>
-        It is our profound pleasure to present to you these beautiful Doberman
-        Pinscher puppies. Feel free to click on any of these images to find out
-        more.
+        Looking for a Weimaraner? Explore our list of beautiful puppies for sale near you. Feel free to click on any of these images to find out more. 
       </p>
     </div>
     <div class="puppies-center">
@@ -94,11 +92,11 @@
 
       <article class="single-puppy">
         <div class="img-container">
-          <img src="<%= allPuppies[i].photo%>"alt="<%= allPuppies[i].name %>" class="puppy-img">
+          <img src="<%= allPuppies[i].photo[0]%>"alt="<%= allPuppies[i].name %>" class="puppy-img">
           <a class="buy-me" type="button" href="/puppies/<%=allPuppies[i]._id%>"><i class="fas fa-paw"></i>Buy me</a>
         </div>
         <div class="about-puppy">
-          <h3 class="name"><%= allPuppies[i].name %></h3>
+          <h3 class="name"><%= allPuppies[i].name %> <span class="home-price">[$<%= allPuppies[i].price %>]</span></h3>
           <hr class="product-rule" />
           <h4 class="description">
             <span><%= allPuppies[i].sex %>, </span><%= allPuppies[i].age %> old
