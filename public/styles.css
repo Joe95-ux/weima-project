@@ -2095,7 +2095,7 @@ a.read-more:hover {
 .info-left {
   position: relative;
   grid-area: info-left;
-  background-image: url(images/use1.jpg);
+  background-image: url(images/use1.JPG);
   background-repeat: repeat;
   background-position: center;
   border-top-left-radius: 5px;
