@@ -158,14 +158,13 @@ app.post("/uploads", upload.array("photo"), ensureAuth, async (req, res) => {
   }
 });
 
-app.post("/all/testimonials", upload.single("photo"), async(req, res)=>{
+app.post("/testimonials", upload.single("photo"), async(req, res)=>{
   let review;
   try {
     review = req.body;
     if(req.file){
       review.photo = req.file.location;
     }
-    console.log(req.file)
     await Review.create(review);
     req.flash("success", "Your review was sent successfully!");
     res.redirect("/testimonials");
