@@ -13,7 +13,7 @@ const pupsSchema = new mongoose.Schema({
     rating:Number,
     category: {
       type: String,
-      default: 'Dobberman'
+      default: 'Weimariner'
     }
   });
 
